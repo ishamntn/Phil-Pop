@@ -1,0 +1,436 @@
+:root {
+  --primary-color: #957C62;
+  --secondary-color:  #957C62;
+  --bg-color: #f5f5f5;
+  --text-color: #444;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+/* Header: always transparent */
+header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: transparent;
+  color: #B77466;
+  text-shadow: 
+    -1px -1px 0 white,  
+     1px -1px 0 white,
+    -1px  1px 0 white,
+     1px  1px 0 white;
+  z-index: 1000;
+}
+
+.logo {
+  font-family: 'Merriweather', serif;
+  font-size: 2rem;
+}
+
+nav .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 4rem;
+  margin-right: 200px;
+}
+
+nav .nav-links a {
+  color: #B77466;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+nav .nav-links a:hover {
+  color: var(--primary-color);
+}
+
+.social-icons img {
+  width: 24px;
+  height: 24px;
+  filter: invert(1);
+}
+
+/* Base size & spacing */
+.social-icons a {
+  margin-left: 1rem;
+  font-size: 1.5rem;  /* adjust icon size */
+}
+
+/* Facebook icon in its brand blue */
+.social-icons .fa-facebook {
+  color: #B77466;
+}
+
+/* Instagram icon in its brand pink */
+.social-icons .fa-instagram {
+  color: #B77466;
+}
+
+/* Optional: hover effects */
+.social-icons a:hover .fa-facebook {
+  color: #145DBF;
+}
+.social-icons a:hover .fa-instagram {
+  color: #C32650;
+}
+
+/* Hero: full viewport height */
+.hero {
+  height: 100vh;
+  background: url('hero-background.jpg') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #B77466;
+  text-shadow: 
+    -1px -1px 0 white,  
+     1px -1px 0 white,
+    -1px  1px 0 white,
+     1px  1px 0 white;
+}
+
+.hero h1 {
+  font-family: 'Merriweather', serif;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  background: #fff;
+  color: var(--secondary-color);
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Intro */
+.intro {
+  background: #fff;
+  padding: 4rem 2rem;
+}
+.intro .container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.intro h2 {
+  font-family: 'Merriweather', serif;
+  font-size: 2rem;
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+}
+.intro p {
+  margin-bottom: 1rem;
+}
+
+/* Gallery grid (4 × 2) */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, auto);
+  gap: 2rem 0rem ;   /* tighten up spacing */
+  padding: 2rem 2rem;
+  background: #fff;
+}
+@media (max-width: 1024px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, auto);
+  }
+}
+
+/* Art pieces */
+/* 1. Hide all art‐details in the grid */
+.art-details {
+  display: none;
+}
+
+/* 2. Still remove the default <summary> arrow */
+.art-piece summary::-webkit-details-marker {
+  display: none;
+}
+.art-piece summary::marker {
+  display: none;
+}
+
+.ul{
+ /* Indents the first line of each <p> element */
+      margin-left: 20px;
+}
+
+
+
+
+/* 3. When in the fullscreen modal, show the details again */
+.fullscreen-modal .art-details {
+  display: block !important;
+}
+
+/* 4. Keep your cards looking the same */
+.art-piece {
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  background: #fff;
+}
+
+.art-piece img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.art-piece h3 {
+  margin: 0;
+  padding: 1rem;
+  font-family: 'Merriweather', serif;
+  color: var(--secondary-color);
+}
+.art-details {
+  padding: 1rem;
+}
+.art-details p {
+  margin-bottom: 0.5rem;
+}
+.art-details ul {
+  margin-left: 1rem;
+  list-style: disc;
+}
+
+/* Footer */
+footer {
+  background: var(--secondary-color);
+  color: #fff;
+  padding-top: 2rem;
+}
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+footer p {
+  text-align: center;
+  color: #ccc;
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+}
+
+/* Fullscreen modal overlay */
+.fullscreen-modal {
+  display: none;           /* hidden by default */
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+/* The white “card” in the center */
+.modal-content {
+  background: #fff;
+  max-width: 90%;
+  max-height: 90%;
+  overflow-y: auto;
+  border-radius: 8px;
+  position: relative;
+  padding: 1.5rem;
+}
+
+/* Close button */
+.modal-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Ensure the cloned article fits */
+.fullscreen-modal .art-piece {
+  max-width: 100%;
+  margin: 0;
+  box-shadow: none;
+}
+
+/* Make sure the image and details stack side-by-side if open */
+.fullscreen-modal .art-piece details {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+.fullscreen-modal .art-piece summary {
+  flex: 0 0 40%;
+  padding: 0;
+}
+.fullscreen-modal .art-piece .art-details {
+  flex: 1;
+  padding: 0;
+}
+
+details > summary {
+  list-style: none !important;
+  /* ensure no built-in padding/margin pushes the arrow into view */
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* webkit browsers */
+details > summary::-webkit-details-marker {
+  display: none !important;
+}
+
+/* Firefox */
+details > summary::marker {
+  display: none !important;
+}
+/* Conclusion section overall styling */
+#conclusion {
+  background-color: #e3dacb;  /* Light green background to match the eco theme */
+  padding: 40px 20px;        /* Add space around content for a comfortable layout */
+}
+
+#conclusion h2 {
+  text-align: center;        /* Center the section heading */
+  margin-bottom: 30px;       /* Space below heading */
+  font-size: 1.8em;          /* Make the heading stand out */
+}
+
+/* Container for the suggestion boxes */
+/* Container: now a horizontal flex row */
+.suggestions {
+  display: flex;
+  flex-direction: row;       /* row instead of column */
+  justify-content: center;   /* center the row */
+  flex-wrap: wrap;           /* wrap to next line on narrow screens */
+  gap: 20px;                 /* horizontal spacing between boxes */
+  padding: 0 10px;           /* optional side padding */
+}
+
+/* Make each box flexibly sized in the row */
+.suggestion-box {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  flex: 1 1 220px;           /* grow/shrink, base width ~220px */
+  max-width: 250px;          /* cap the width so four fit comfortably */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Image at the top of each suggestion box */
+.suggestion-box img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 10px;       /* Center the image and add space below it */
+}
+
+/* Bold title under the image */
+.suggestion-title {
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-bottom: 8px;
+}
+
+/* Fun call-to-action tagline under the title */
+.suggestion-tagline {
+  font-size: 1em;
+  color: #555;              /* Slightly muted text color for secondary text */
+}
+
+header {
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* When scrolled, give it a solid background + subtle shadow */
+header.scrolled {
+  background-color: var(--secondary-color);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.contain{
+  text-align: center;
+  font-family: 'Merriweather', serif;
+  color: var(--secondary-color);
+  background: #fff;
+}
+
+/* Cultural Artifacts strip */
+.artifacts {
+  background: #fff;
+  padding: 2rem 2rem 3rem;
+}
+
+/* Grid for the small artifact boxes */
+.artifact-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+/* Smaller card styling to keep them compact */
+.artifact-card {
+  max-width: 100%;              /* override 600px from .art-piece */
+}
+
+.artifact-card h3 {
+  font-size: 0.95rem;
+  padding: 0.5rem 0.75rem;
+}
+
+.artifact-card img {
+  aspect-ratio: 4 / 3;          /* keep them uniform */
+  object-fit: cover;
+}
+
+/* Responsive behavior for tablets and phones */
+@media (max-width: 900px) {
+  .artifact-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .artifact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
